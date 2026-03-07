@@ -8,7 +8,7 @@
   },
   "type": "module",
   "scripts": {
-    "build": "npx tsc",
+    "build": "node node_modules/typescript/bin/tsc",
     "dev": "tsx src/cli.ts",
     "start": "node dist/cli.js",
     "clean": "rimraf dist",
