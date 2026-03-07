@@ -13,7 +13,8 @@
     "start": "node dist/cli.js",
     "clean": "rimraf dist",
     "rebuild": "npm run clean && npm run build",
-    "link:local": "npm link"
+    "link:local": "npm link",
+    "prepare": "npm run build"
   },
   "keywords": [
     "mybatis-plus",
