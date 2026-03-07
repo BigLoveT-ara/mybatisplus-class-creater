@@ -24,6 +24,11 @@
   ],
   "author": "",
   "license": "MIT",
+  "files": [
+    "bin",
+    "dist",
+    "templates"
+  ],
   "devDependencies": {
     "@types/node": "^20.11.0",
     "rimraf": "^5.0.5",
