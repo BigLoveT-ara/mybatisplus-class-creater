@@ -1,0 +1,14 @@
+package <%= basePackage %>.mapper;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import <%= entityPackage %>.<%= className %>;
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ * <%= tableInfo.tableComment %> Mapper 接口
+ * @author <%= author %>
+ */
+@Mapper
+public interface <%= classNameNoSuffix %>Mapper extends BaseMapper<<%= className %>> {
+
+}

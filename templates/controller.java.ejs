@@ -1,0 +1,85 @@
+package <%= basePackage %>.api;
+
+import <%= entityPackage %>.<%= className %>;
+import <%= basePackage %>.service.<%= classNameNoSuffix %>Service;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import java.util.List;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.MediaType;
+
+
+/**
+ * <%= tableInfo.tableComment %> Api
+ * @author <%= author %>
+ */
+@Tag(name = "<%= tableInfo.tableComment %>Api")
+@RestController
+@RequestMapping("/<%= tableInfo.tableName %>")
+public class <%= classNameNoSuffix %>Api {
+
+    @Autowired
+    private <%= classNameNoSuffix %>Service <%= classNameNoSuffixFirstLower %>Service;
+
+    /**
+     * 查询全部
+     */
+    @Operation(description = "查询全部<%= tableInfo.tableComment %>记录")
+    @PostMapping(value = "/list", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public List<<%= className %>> list() {
+        return <%= classNameNoSuffixFirstLower %>Service.list();
+    }
+
+    /**
+     * 分页查询
+     */
+    @Operation(description = "分页查询<%= tableInfo.tableComment %>记录")
+    @PostMapping(value = "/page", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public Page<<%= className %>> page(
+            @RequestParam(defaultValue = "1") Integer current,
+            @RequestParam(defaultValue = "10") Integer size) {
+        return <%= classNameNoSuffixFirstLower %>Service.page(new Page<>(current, size));
+    }
+
+    /**
+     * 根据 ID 查询
+     */
+    @Operation(description = "根据ID查询<%= tableInfo.tableComment %>记录")
+    @GetMapping("/{id}")
+    public <%= className %> getById(@PathVariable Long id) {
+        return <%= classNameNoSuffixFirstLower %>Service.getById(id);
+    }
+
+    /**
+     * 新增
+     */
+    @Operation(description = "新增<%= tableInfo.tableComment %>记录")
+    @PostMapping(value = "/save", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public boolean save(@RequestBody <%= className %> <%= classNameNoSuffixFirstLower %>) {
+        return <%= classNameNoSuffixFirstLower %>Service.save(<%= classNameNoSuffixFirstLower %>);
+    }
+
+    /**
+     * 修改
+     */
+    @Operation(description = "修改<%= tableInfo.tableComment %>记录")
+    @PostMapping(value = "/update", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public boolean update(@RequestBody <%= className %> <%= classNameNoSuffixFirstLower %>) {
+        return <%= classNameNoSuffixFirstLower %>Service.updateById(<%= classNameNoSuffixFirstLower %>);
+    }
+
+    /**
+     * 删除
+     */
+    @Operation(description = "删除<%= tableInfo.tableComment %>记录")
+    @PostMapping(value = "/delete", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    public boolean delete(@RequestBody <%= className %> <%= classNameNoSuffixFirstLower %>) {
+        return <%= classNameNoSuffixFirstLower %>Service.removeById(<%= classNameNoSuffixFirstLower %>.getId());
+    }
+}

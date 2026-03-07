@@ -1,0 +1,41 @@
+{
+  "name": "mybatisplus-class-creater",
+  "version": "1.0.2",
+  "description": "一个用于解析 Java 代码并生成 MyBatis-Plus 相关代码模板的本地工具",
+  "main": "dist/index.js",
+  "bin": {
+    "mp-class-creater": "./bin/mp-class-creater.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/cli.ts",
+    "start": "node dist/cli.js",
+    "clean": "rimraf dist",
+    "rebuild": "npm run clean && npm run build",
+    "link:local": "npm link"
+  },
+  "keywords": [
+    "mybatis-plus",
+    "java",
+    "code-generator",
+    "template",
+    "cli"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "rimraf": "^5.0.5",
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "commander": "^12.0.0",
+    "glob": "^10.3.10",
+    "tslib": "^2.6.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
