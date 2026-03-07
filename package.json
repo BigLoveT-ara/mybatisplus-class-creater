@@ -8,13 +8,12 @@
   },
   "type": "module",
   "scripts": {
-    "build": "node node_modules/typescript/bin/tsc",
+    "build": "tsc",
     "dev": "tsx src/cli.ts",
     "start": "node dist/cli.js",
     "clean": "rimraf dist",
     "rebuild": "npm run clean && npm run build",
-    "link:local": "npm link",
-    "prepare": "npm run build"
+    "link:local": "npm link"
   },
   "keywords": [
     "mybatis-plus",
