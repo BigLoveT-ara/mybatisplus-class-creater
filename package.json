@@ -1,6 +1,6 @@
 {
   "name": "mybatisplus-class-creater",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "一个用于解析 Java 代码并生成 MyBatis-Plus 相关代码模板的本地工具",
   "main": "dist/index.js",
   "bin": {
