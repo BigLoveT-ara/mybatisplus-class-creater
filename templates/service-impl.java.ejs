@@ -1,16 +1,21 @@
 package <%= basePackage %>.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import <%= basePackage %>.mapper.<%= classNameNoSuffix %>Mapper;
 import <%= basePackage %>.service.<%= classNameNoSuffix %>Service;
 import <%= entityPackage %>.<%= className %>;
 import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Autowired;
 
 /**
  * <%= tableInfo.tableComment %> Service 实现类
  * @author <%= author %>
  */
 @Service
-public class <%= classNameNoSuffix %>ServiceImpl extends ServiceImpl<<%= classNameNoSuffix %>Mapper, <%= className %>> implements <%= classNameNoSuffix %>Service {
+public class <%= classNameNoSuffix %>ServiceImpl implements <%= classNameNoSuffix %>Service {
+
+
+    @Autowired
+    private <%= classNameNoSuffix %>Mapper <%= classNameNoSuffixFirstLower %>Mapper;
+
 
 }
