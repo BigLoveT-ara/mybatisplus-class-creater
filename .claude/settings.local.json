@@ -18,7 +18,15 @@
       "Bash(git branch:*)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(tar:*)",
+      "Bash(./publish.cmd:*)",
+      "Bash(cmd:*)",
+      "Bash(ls:*)",
+      "Bash(dir:*)",
+      "Bash(git reset:*)",
+      "Bash(npx tsx:*)",
+      "Bash(cd test-generated:*)"
     ]
   }
 }
